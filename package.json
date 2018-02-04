@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "ccxt": "^1.10.1000",
+    "https": "^1.0.0",
+    "technicalindicators": "^1.1.1"
+  }
+}
