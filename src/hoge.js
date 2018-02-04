@@ -4,7 +4,7 @@ const ccxt = require('ccxt');
 const https = require('https');
 const util = require('util');
 
-rangeMin = 180;
+rangeMin = 260;
 async function getAsJson(url) {
   const response = await fetch(url);
   const json = await response.json();
