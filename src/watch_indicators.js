@@ -64,14 +64,14 @@ const patternMap = {
     // console.log(ccxt.omit (ticker, 'info'));
     // 必要そうな情報をLTSVで出力
     util.print(`bid:${ticker.bid}\task:${ticker.ask}\tlast:${ticker.last}\ttime:${ticker.datetime}\tvolume:${ticker.baseVolume}`)
-    util.print(`pattern:${patternMap[pattern.pattern]}\tpatternId:${pattern.patternId}\tprob:${pattern.probability}`);
+    util.print(`\tpattern:${patternMap[pattern.pattern]}\tpatternId:${pattern.patternId}\tprob:${pattern.probability}`);
     if (macdLatest) {
-      util.print(`macd:${macdLatest.MACD}\thist:${macdLatest.histogram}\tsignal:${macdLatest.signal}`);
+      util.print(`\tmacd:${macdLatest.MACD}\thist:${macdLatest.histogram}\tsignal:${macdLatest.signal}`);
     }
     if (bbLatest) {
-      util.print(`bbLower:${bbLatest.lower}\tbbMiddle:${bbLatest.middle}\tbbUpper:${bbLatest.upper}`);
+      util.print(`\tbbLower:${bbLatest.lower}\tbbMiddle:${bbLatest.middle}\tbbUpper:${bbLatest.upper}`);
     }
-    console.log(`sma:${sma.slice(-1).pop()}`);
+    console.log(`\tsma:${sma.slice(-1)[0]}`);
   }
 
 })();
