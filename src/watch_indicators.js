@@ -10,6 +10,15 @@ async function getAsJson(url) {
   const json = await response.json();
   return json;
 };
+function sleep(time) {
+  const d1 = new Date();
+  while (true) {
+    const d2 = new Date();
+    if (d2 - d1 > time) {
+      return;
+    }
+  }
+}
 
 const macdInput = {
   values : null,
@@ -46,7 +55,10 @@ const patternMap = {
 
   while(true) {
     // update series
-    const ticker = await exchange.fetchTicker (symbol);
+    const ticker = await exchange.fetchTicker(symbol).catch((e) => {
+      console.log(e);
+      sleep(10000);
+    });
     series.push(ticker.bid)
     series = series.slice(-rangeMin);
 
